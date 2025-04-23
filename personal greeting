@@ -1,0 +1,23 @@
+import React, { useState } from "react";
+
+export default function GreetingComponent() {
+  const [name, setName] = useState("");
+
+  return (
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
+      <h1 className="text-2xl font-bold mb-4">Personalized Greeting</h1>
+      <input
+        type="text"
+        placeholder="Enter your name"
+        className="border border-gray-300 p-2 rounded w-64 text-center shadow"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+      />
+      {name && (
+        <p className="mt-4 text-lg text-blue-600 font-semibold">
+          Hello, {name}!
+        </p>
+      )}
+    </div>
+  );
+}
